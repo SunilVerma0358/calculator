@@ -16,58 +16,63 @@
     <meta property="og:description" content="Calculator " />
     <meta property="og:image" content="https://thumbs2.imgbox.com/1d/bf/IAlzVLMu_t.png" />
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://metatags.io/" />
     <meta property="twitter:title" content="Calculator" />
     <meta property="twitter:description" content="Calculator " />
     <meta property="twitter:image" content="https://thumbs2.imgbox.com/1d/bf/IAlzVLMu_t.png" />
 
-    <!-- Meta Tags Generated with https://metatags.io -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 </head>
 
 <body>
     <section class="bg-black h-screen flex items-center justify-center">
-        <form id="data" name="formTwo" class="w-[350px] py-5 px-6 rounded-xl bg-blue-100 outline-black border-none">
-            <input id="calc" type="text" name="Result" class="w-full p-[10px] text-2xl border-none rounded-lg shadow-[0_2px_5px_#0000004d_inset]"> <br> <br>
-            <div class=" flex items-center justify-between">
+        <form name="formTwo" class="w-[350px] py-5 px-6 rounded-xl bg-blue-100 outline-black border-none">
+            <input id="calc" type="text" readonly name="Result" class="w-full p-[10px] text-2xl border-none rounded-lg shadow-[0_2px_5px_#0000004d_inset]">
+            <div class=" flex items-center justify-between pt-6">
                 <input class="bg-white text-black hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="1" onclick="formTwo.Result.value += '1' ">
                 <input class="bg-white text-black hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="2" onclick="formTwo.Result.value += '2' ">
                 <input class="bg-white text-black hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="3" onclick="formTwo.Result.value += '3' ">
-                <input class="operator bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="+" onclick="formTwo.Result.value += '+' ">
+                <input class=" bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="+" onclick="addOperator('+')">
             </div>
-
             <div class=" flex items-center justify-between pt-6">
                 <input class="bg-white text-black hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="4" onclick="formTwo.Result.value += '4' ">
                 <input class="bg-white text-black hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="5" onclick="formTwo.Result.value += '5' ">
                 <input class="bg-white text-black hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="6" onclick="formTwo.Result.value += '6' ">
-                <input class="operator bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="-" onclick="formTwo.Result.value += '-' ">
+                <input class=" bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="-" onclick="addOperator('-')">
             </div>
-
             <div class=" flex items-center justify-between pt-6">
                 <input class="bg-white text-black hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="7" onclick="formTwo.Result.value += '7' ">
                 <input class="bg-white text-black hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="8" onclick="formTwo.Result.value += '8' ">
                 <input class="bg-white text-black hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="9" onclick="formTwo.Result.value += '9' ">
-                <input class="operator bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="*" onclick="formTwo.Result.value += '*' ">
+                <input class=" bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="*" onclick="addOperator('*')">
             </div>
-
             <div class=" flex items-center justify-between pt-6">
-                <input class="operator bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="/" onclick="formTwo.Result.value += '/' ">
+                <input class="bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="/" onclick="addOperator('/')">
                 <input class="bg-white text-black hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="0" onclick="formTwo.Result.value += '0' ">
-                <input class="operator bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="." onclick="formTwo.Result.value += '.' ">
-
-                <input class="operator bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="=" onclick="formTwo.Result.value = eval(formTwo.Result.value) ">
+                <input class="bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="." onclick="addOperator('.')">
+                <input class="bg-blue-500 text-white hover:bg-yellow-400 py-3 px-6 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="=" onclick="formTwo.Result.value = eval(formTwo.Result.value) ">
             </div>
-            <br>
+            <div class=" flex justify-between items-center pt-6 gap-2">
+                <input class="backspace opreator w-full bg-red-300 text-white hover:bg-yellow-400 py-3 px-4 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white " type="button" value="C" onclick="formTwo.Result.value = formTwo.Result.value.slice(0, -1)">
+                <div class="bar"></div>
+                <input class="w-full bg-red-300 text-white hover:bg-yellow-400 py-3 px-4 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" type="button" value="A/C" onclick="formTwo.Result.value = ' ' ">
+            </div>
 
-            <input type="button" class="w-full bg-red-300 text-white hover:bg-yellow-400 py-3 px-4 text-2xl cursor-pointer border-none rounded-lg transition-all duration-300 ease-linear hover:text-white" value="Clear All" onclick="formTwo.Result.value = ' ' " id="clear">
-            <br>
 
         </form>
     </section>
-
+    <script>
+        function addOperator(operator) {
+            const lastCharacter = document.getElementById('calc').value.slice(-1);
+            if (isNaN(lastCharacter) && lastCharacter !== ')') {
+                document.getElementById('calc').value = document.getElementById('calc').value.slice(0, -1) + operator;
+            } else {
+                document.getElementById('calc').value += operator;
+            }
+        }
+    </script>
 </body>
 
 </html>
